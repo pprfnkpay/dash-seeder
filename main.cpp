@@ -356,13 +356,13 @@ extern "C" void* ThreadStats(void*) {
   } while(1);
 }
 
-static const string mainnet_seeds[] = {"static-dnsseed.pprfnk.io", ""};
+static const string mainnet_seeds[] = {"dnsseed1.pprfnk.cash", ""};
 static const string testnet_seeds[] = {"not_yet", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("pprfnk.io", 9888), true);
+    db.Add(CService("pprfnk.cash", 9888), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
